@@ -8,6 +8,7 @@ Use the RandomNumbers.java class that has been provided for you as an attachment
 Problem – 2
 
 Create a class Prog2. Inside its main method, create float variables to store each of the following numbers:
+
 1.27, 3.881, 9.6
 Output to the console the following two values:
 1. the sum of the floats as an integer, obtained by casting the sum to type int
