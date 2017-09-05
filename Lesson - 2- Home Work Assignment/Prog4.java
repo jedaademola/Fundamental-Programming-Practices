@@ -1,4 +1,5 @@
-package fpp;
+package com.fpp;
+
 
 import java.util.Scanner;
 
