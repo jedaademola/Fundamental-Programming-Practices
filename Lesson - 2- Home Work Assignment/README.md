@@ -15,6 +15,7 @@ Output to the console the following two values:
 2. the sum of the floats as an integer, obtained by rounding the sum to the nearest integer, using the Math.round function
 
 Problem – 3
+
 The records of a database table Product have been stored in text format as s string in your given
 program using delimiters “:” and “,” in the following way: Different rows are separated by “:” and,
 within a particular record, different column entries are separated by “,”. In each record, the first column
@@ -26,6 +27,7 @@ these values to the console in the following form: (this is a typical example)
 113D
 521W
 009G
+
 public class Prog3 {
 public static void main(String[] args){
 //column names: productId, name,numInStock,provider,pricePerUnit
@@ -58,13 +60,16 @@ public static void main(String[] args){
 }
 
 Problem – 4
+
 Write a program (called Prog4) that asks the user to input a String. The output is the characters
 of this String in reverse order, which should be written to the console. (For example, if the input
 string is "Hello", the ouptut string would be "olleH") (Do not use arrays and do not create a
 new String object. In particular, you may not use Java API library functions that peform the
 reverse operation for you, such as the reverse functions found in StringBuilder and
 StringBuffer.)Implement your own logic, NO API.
+
 Problem – 5
+
 Write a program that generates a random set of 8 addition problems (intended for a child in
 elementary school). Numbers to be added should be randomly chosen from the range 1..99 [Use
 the RandomNumbers.java class to produce random number in the range of 1..99]. Each run of
@@ -82,6 +87,7 @@ Hint : Use Multi-Dimensional array to store the random numbers in [4 x 4 ] matri
 
 
 Problem – 6
+
 Write a program called RemoveDups. Create an array which accepts an array of
 Strings only. Creates a new array in which all duplicate Strings in the original input array have
 been removed.
@@ -89,7 +95,9 @@ For example, if the input array is
 ["horse", "dog", "cat", "horse","dog"]
 then the output would be the following array:
 ["horse","dog","cat"]
+
 Problem – 7
+
 Write a program to accept the string inputs from Command line arguments and perform the
 following.
 a. Print the length of each string input.
