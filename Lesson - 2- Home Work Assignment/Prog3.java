@@ -1,4 +1,4 @@
-package fpp;
+package com.fpp;
 
 public class Prog3 {
 	public static void main(String[] args){
