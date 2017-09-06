@@ -1,23 +1,28 @@
-package fpp;
-
-import java.util.Arrays;
+package com.fpp;
 
 public class Prog6 {
 
 	public static void main(String[] args) {
 		String[] arrayWithDuplicate = {"horse", "dog", "cat", "horse","dog"};
+		
 		String[] arrayWithoutDuplicate = new String[5] ;
 		
 		int k=0;
 		for(String item :arrayWithDuplicate)
 		{
 		  if (!checkForDuplicate(item,arrayWithoutDuplicate))
-		  {
+		 {
 			  arrayWithoutDuplicate[k]= item;
 			  ++k;
-		  }
+		 }
+			
+			
 		}
-		System.out.println(Arrays.toString(arrayWithoutDuplicate));
+		for(String arrayItem : arrayWithoutDuplicate)
+		{
+			if (arrayItem != null)System.out.println( arrayItem);
+		}
+		
 	}
 	
 	public static boolean checkForDuplicate(String item, String[] arr)
@@ -32,3 +37,11 @@ public class Prog6 {
 	}
 
 }
+
+/*
+ horse
+ dog
+ cat
+
+ */
+
