@@ -37,12 +37,12 @@ public class HeartRates {
 	
 	private float LowerBoundaryTargetHeartRate()
 	{
-		return (averageHeartRate() * LOWER_BOUNDARY) * REST_HEART_RATE;
+		return (averageHeartRate() * LOWER_BOUNDARY) + REST_HEART_RATE;
 	}
 	
 	private float UpperBoundaryTargetHeartRate()
 	{
-		return (averageHeartRate() * UPPER_BOUNDARY) * REST_HEART_RATE;
+		return (averageHeartRate() * UPPER_BOUNDARY) + REST_HEART_RATE;
 	}
 	
 	
