@@ -1,5 +1,8 @@
 package com.fpp;
 
+import com.fpp.lesson3.AgeCalculator;
+import com.fpp.lesson3.Person;
+
 public class HeartRates {
 	
 	final int REST_HEART_RATE = 70;
@@ -52,8 +55,8 @@ public class HeartRates {
 				", " + person.getLastName() + ", " +  
 				person.getDateOfBirth() + ", " +
 				getAgeInYear() + ", " + 
-				"," + maximumHeartRate() + "," +
-				"Target Heart Rate Range is between: " + LowerBoundaryTargetHeartRate() +  "  and " + UpperBoundaryTargetHeartRate() + "]";
+				maximumHeartRate() + "," +
+				"Target Heart Rate Range is between: " + LowerBoundaryTargetHeartRate() +  " and " + UpperBoundaryTargetHeartRate() + "]";
 		}
 
 	
