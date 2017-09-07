@@ -1,4 +1,4 @@
-package com.fpp.lesson3;
+package com.fpp;
 
 public class HeartRates {
 	
