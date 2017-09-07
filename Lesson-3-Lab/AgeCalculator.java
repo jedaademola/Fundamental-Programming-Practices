@@ -1,4 +1,4 @@
-package com.fpp.lesson3;
+package com.fpp;
 
 import java.time.LocalDate;
 import java.time.Period;
