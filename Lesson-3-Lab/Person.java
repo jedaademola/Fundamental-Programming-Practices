@@ -1,4 +1,4 @@
-package com.fpp.lesson3;
+packagecom.fpp;
 
 public class Person {
 	
