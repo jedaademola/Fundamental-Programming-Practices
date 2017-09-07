@@ -2,8 +2,6 @@ package com.fpp;
 
 import java.util.Scanner;
 
-import com.fpp.lesson3.HeartRates;
-import com.fpp.lesson3.Person;
 
 public class Problem2 {
 
@@ -44,5 +42,4 @@ Arogundade
 Please enter your birthday in yyyy-MM-dd format (e.g. 1980-9-28): 
 2015-3-15
 [Farah, Arogundade, 2015-3-15, 2, ,218,Target Heart Rate Range is between: 5180.0  and 8806.0]
-
  */
