@@ -1,6 +1,6 @@
 package com.fpp;
 
-import com.fpp.lesson3.Address;
+import com.fpp.Address;
 
 public class Customer {
 	
