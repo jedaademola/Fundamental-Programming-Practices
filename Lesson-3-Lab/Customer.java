@@ -1,6 +1,5 @@
 package com.fpp;
 
-import com.fpp.Address;
 
 public class Customer {
 	
@@ -22,7 +21,7 @@ public class Customer {
 	
 	
 	public Customer() {
-		
+		this("","","");
 	}
 
 
