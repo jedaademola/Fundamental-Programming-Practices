@@ -1,4 +1,4 @@
-package com.fpp.lesson3;
+package com.fpp;
 
 import java.util.Scanner;
 
@@ -6,22 +6,22 @@ public class Problem2 {
 
 	public static void main(String[] args) {
 		
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 		
 		System.out.println("Enter First Name:");
-		String firstName = scanner.nextLine();
+		String firstName = input.nextLine();
 		
 		System.out.println("Enter Last Name:");
-		String lastName = scanner.nextLine();
+		String lastName = input.nextLine();
 		
 		System.out.println("Please enter your birthday "
                 + "in yyyy-MM-dd format (e.g. 1980-9-28): ");
-		String dateOfBirth = scanner.nextLine();
+		String dateOfBirth = input.nextLine();
 		
-		Person person = new Person();
-		person.setFirstName(firstName);
-		person.setLastName(lastName);
-		person.setDateOfBirth(dateOfBirth);//1980-9-28..yyyy-M-d"
+		Person person = new Person(firstName,lastName,dateOfBirth);
+		//person.setFirstName(firstName);
+		//person.setLastName(lastName);
+		//person.setDateOfBirth(dateOfBirth);//1980-9-28..yyyy-M-d"
 		
 		
 		HeartRates rate = new HeartRates(person);
