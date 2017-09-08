@@ -1,7 +1,6 @@
-package com.fpp;
+package com.fpp.lesson3;
 
 import java.util.Scanner;
-
 
 public class Problem2 {
 
@@ -33,13 +32,14 @@ public class Problem2 {
 
 }
 /*
- OUTPUT
- -----------
+OUTPUT
+--------------------
 Enter First Name:
 Farah
 Enter Last Name:
 Arogundade
 Please enter your birthday in yyyy-MM-dd format (e.g. 1980-9-28): 
 2015-3-15
-[Farah, Arogundade, 2015-3-15, 2, ,218,Target Heart Rate Range is between: 5180.0  and 8806.0]
+[Farah, Arogundade, 2015-3-15, 2, 218,Target Heart Rate Range is between: 144.0 and 195.8]
+
  */

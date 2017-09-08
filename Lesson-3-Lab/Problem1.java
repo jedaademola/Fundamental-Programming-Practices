@@ -1,6 +1,7 @@
-package com.fpp;
+package com.fpp.lesson3;
 
-
+import com.fpp.lesson3.Address;
+import com.fpp.lesson3.Customer;
 
 public class Problem1 {
 
@@ -39,3 +40,10 @@ public class Problem1 {
 	}
 
 }
+
+/*
+OUTPUT
+--------------------
+[Farhan, Arogundade, ssn: 123456]
+[Farah, Arogundade, ssn: 123457]
+*/

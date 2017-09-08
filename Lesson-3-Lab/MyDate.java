@@ -1,4 +1,4 @@
-package com.fpp;
+package com.fpp.lesson3;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -45,7 +45,10 @@ public class MyDate {
 		
 		 String dateString=  month + "/" + day + "/" + year;
 		 LocalDate localDateTest = LocalDate.parse(dateString, formatterMMDDYYYY);
-		 System.out.println("********************* CHOICE 1");
+		 
+		 System.out.println();
+		 System.out.println("CHOICE 1 OUTPUT");
+		 System.out.println("*********************");
 		 System.out.printf("MM/dd/yyyy: %s", dateString);
 		 System.out.println();
 		 System.out.printf("MMMM dd,yyyy: %s", 
@@ -58,32 +61,14 @@ public class MyDate {
 				 + " " +localDateTest.getYear());
 	}
 	
-	public void dateInMMDDYY(int day,int year)
-	{
-		 String dateString= day + SPACE + year;
-		 LocalDate localDateTest = LocalDate.parse(dateString, formatterDDDYYYY);
-		 System.out.println("********************* CHOICE 3");
-		 System.out.printf("MM/dd/yyyy: %s",  
-				 localDateTest.getMonthValue()
-				 + "/" + localDateTest.getDayOfMonth()
-			     + "/" +localDateTest.getYear());
-		 System.out.println();
-		 System.out.printf("MMMM dd,yyyy: %s", dateString);
-			//	 localDateTest.getMonth()
-				// + " " + localDateTest.getDayOfMonth()
-			 //    + "," +localDateTest.getYear());
-		 System.out.println();
-		 System.out.printf("DDD yyyy: %s", 
-				 localDateTest.getDayOfYear()
-				 + " " +localDateTest.getYear());
-		
-	}
+
 	public void dateInMMDDYY(int day,String month,int year)
 	{
 		 String dateString= month + SPACE + day + "," + year;
 		 LocalDate localDateTest = LocalDate.parse(dateString, formatterMMMMDDYYYY);
 		 System.out.println();
-		 System.out.println("********************* CHOICE 2");
+		 System.out.println("CHOICE 2 OUTPUT");
+		 System.out.println("*********************");
 		 System.out.printf("MM/dd/yyyy: %s", 
 				 localDateTest.getMonthValue()
 				 + "/" + localDateTest.getDayOfMonth()
@@ -98,6 +83,28 @@ public class MyDate {
 				 localDateTest.getDayOfYear()
 				 + " " +localDateTest.getYear());
 		 System.out.println();
+	}
+	
+	public void dateInMMDDYY(int day,int year)
+	{
+		 String dateString= day + SPACE + year;
+		 LocalDate localDateTest = LocalDate.parse(dateString, formatterDDDYYYY);
+		 
+		 System.out.println();
+		 System.out.println("CHOICE 3 OUTPUT");
+		 System.out.println("*********************");
+		 System.out.printf("MM/dd/yyyy: %s",  
+				 localDateTest.getMonthValue()
+				 + "/" + localDateTest.getDayOfMonth()
+			     + "/" +localDateTest.getYear());
+		 System.out.println();
+		 System.out.printf("MMMM dd,yyyy: %s", 
+				 localDateTest.getMonth()
+				 + " " + localDateTest.getDayOfMonth()
+			     + "," +localDateTest.getYear());
+					 System.out.println();
+		 System.out.printf("DDD yyyy: %s",dateString);
+		
 	}
 	
 	public int getMonthMM() {

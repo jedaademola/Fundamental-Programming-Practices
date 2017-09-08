@@ -19,8 +19,8 @@ Problem – 2
 (Target-Heart-Rate Calculator) While exercising, you can use a heart-rate monitor to see that your heart rate stays within a safe range suggested by your trainers and doctors. According to the American Heart Association (AHA), the formula for calculating your Maximum Heart Rate (MHR) in beats per minute is 220 minus your age in years. Your target heart rate is a range that’s 50–85% of your maximum heart rate.
 [Formula: To Calculate Target heart rate range is mentioned below ]
 a. Assign Resting Heart Rate (RHR) = 70.
-b. Assign MHR = 220 – age.
-c. Calculate Average Heart Rate (AHR) = MHR – RHR.
+b. Assign MHR = 220 - age.
+c. Calculate Average Heart Rate (AHR) = MHR - RHR.
 d. Assign Lower Boundary(LB) = 0.5
 e. Assign Upper Boundary(UB) = 0.85.
 f. Calculate Lower Boundary Target Heart Rate (LBTHR)= (AHR*LB) + RHR,
