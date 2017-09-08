@@ -1,0 +1,84 @@
+package com.fpp;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class MyDate {
+	//https://www.mkyong.com/java8/java-8-how-to-convert-string-to-localdate/
+	//http://www.java2s.com/Tutorials/Java/java.time/LocalDate/2880__LocalDate.of_int_year_Month_month_int_dayOfMonth_.htm
+	//https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+	 DateTimeFormatter formatterMMDDYYYY = DateTimeFormatter.ofPattern("MM/DD/YYYY");
+	 DateTimeFormatter formatterMMMMDDYYYY = DateTimeFormatter.ofPattern("MMMM DD,YYYY");
+	 DateTimeFormatter formatterDDDYYYY = DateTimeFormatter.ofPattern("DDD YYYY");
+	 
+	private int monthMM;
+	private int dayDD;
+	private int year;
+	private String monthName;
+	private int dayDDD;
+	
+	public MyDate(int day,int month,int year)
+	{
+		this.dayDD = day;
+		this.monthMM = month;
+		this.year= year;
+	}
+	
+	public MyDate(int day,String month,int year)
+	{
+		this.dayDD = day;
+		this.monthName = month;
+		this.year= year;
+	}
+	
+	public MyDate(int day,int year)
+	{
+		this.dayDDD = day;
+		this.year= year;
+	}
+	
+	private String dateInMMDDYY()
+	{
+		 LocalDate today = LocalDate.now();
+	     
+		 
+	     return null;
+	}
+	
+	public int getMonthMM() {
+		return monthMM;
+	}
+	public void setMonthMM(int monthMM) {
+		this.monthMM = monthMM;
+	}
+	public int getDayDD() {
+		return dayDD;
+	}
+	public void setDayDD(int dayDD) {
+		this.dayDD = dayDD;
+	}
+	public int getYear() {
+		return year;
+	}
+	public void setYear(int year) {
+		this.year = year;
+	}
+	public String getMonthName() {
+		return monthName;
+	}
+	public void setMonthName(String monthName) {
+		this.monthName = monthName;
+	}
+	public int getDayDDD() {
+		return dayDDD;
+	}
+	public void setDayDDD(int dayDDD) {
+		this.dayDDD = dayDDD;
+	}
+	
+	public String toString()
+	{
+		return "";
+	}
+
+}
