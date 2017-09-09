@@ -1,16 +1,17 @@
 package com.fpp;
 
-
 import java.util.Scanner;
+
+ enum ShapeType {
+	C, R, T
+};
 
 public class Problem4 {
 
-	 enum Shape {
-		C, R, T
-	}
+	
 
 	public static void main(String[] args) {
-
+	
 		System.out.println("Enter C for Circle");
 		System.out.println("Enter R for Rectangle");
 		System.out.println("Enter T for Triangle");
@@ -59,3 +60,19 @@ public class Problem4 {
 	}
 
 }
+/*
+ OUTPUT
+ ----------------------
+Enter C for Circle
+Enter R for Rectangle
+Enter T for Triangle
+
+Choose your Choice:
+R
+Enter the width of the Rectangle:
+20
+Enter the height of the Rectangle:
+45
+The area of Rectangle is :900.0
+
+ */
