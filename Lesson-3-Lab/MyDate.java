@@ -4,11 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class MyDate {
-	//https://www.mkyong.com/java8/java-8-how-to-convert-string-to-localdate/
-	//http://www.java2s.com/Tutorials/Java/java.time/LocalDate/2880__LocalDate.of_int_year_Month_month_int_dayOfMonth_.htm
-	//https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
-	//https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
-	
+		
 	 DateTimeFormatter formatterMMDDYYYY = DateTimeFormatter.ofPattern("M/d/yyyy");
 	 DateTimeFormatter formatterMMMMDDYYYY = DateTimeFormatter.ofPattern("MMMM d,yyyy");
 	 DateTimeFormatter formatterDDDYYYY = DateTimeFormatter.ofPattern("D yyyy");
