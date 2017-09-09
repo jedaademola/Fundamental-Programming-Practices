@@ -1,7 +1,6 @@
-package com.fpp.lesson3;
+package com.fpp;
 
-import com.fpp.lesson3.Address;
-import com.fpp.lesson3.Customer;
+
 
 public class Problem1 {
 
