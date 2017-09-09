@@ -37,13 +37,14 @@ public class Problem3 {
 					
 					System.out.println("Enter Year:");
 					int year = input.nextInt();
-					if (month < 1 || day < 0 || year < 0)
+					if (month < 0 || day < 0 || year < 0)
 						
 						System.out.println("Error: Invalid Inputs");
 					else
 					{
 						MyDate date1 = new MyDate(day,month,year);
-						date1.dateInMMDDYY(date1.getDayDD(), date1.getMonthMM(), date1.getYear());
+						//date1.dateInMMDDYYWithParameters(date1.getDayDD(), date1.getMonthMM(), date1.getYear());
+						date1.dateInMMDDYY();
 					}
 									
 					 
@@ -68,7 +69,8 @@ public class Problem3 {
 					else
 					{
 						MyDate date2 = new MyDate(day,month,year);
-						date2.dateInMMDDYY(date2.getDayDD(), date2.getMonthName(), date2.getYear());
+						//date2.dateInMMMMDDYYYYWithParameters(date2.getDayDD(), date2.getMonthName(), date2.getYear());
+						date2.dateInMMMMDDYYYY();
 					}
 					
 					
@@ -89,7 +91,9 @@ public class Problem3 {
 					else
 					{
 						MyDate date3 = new MyDate(day,year);
-						date3.dateInMMDDYY(date3.getDayDDD(), date3.getYear());
+						//date3.dateInDDDYYYYWithParameters(date3.getDayDDD(), date3.getYear());
+						date3.dateInDDDYYYY();
+						
 					}
 					
 				
@@ -121,7 +125,7 @@ public class Problem3 {
 				System.out.println("Enter 4 to exit");
 				System.out.println();
 				System.out.println("Choose your Choice:");
-				 choice = input.nextInt();
+				choice = input.nextInt();
 			 }
 		 
 		}
@@ -186,18 +190,17 @@ Choose your Choice:
 3
 Choice:3
 Enter Day of Year:
-251
+200
 Enter Year:
 2017
 
 CHOICE 3 OUTPUT
 *********************
-MM/dd/yyyy: 9/8/2017
-MMMM dd,yyyy: SEPTEMBER 8,2017
-DDD yyyy: 251 2017
+MM/dd/yyyy: 7/19/2017
+MMMM dd,yyyy: JULY 19,2017
+DDD yyyy: 200 2017
 Do you want to Continue:
 n
 Terminated
-
 
  */
