@@ -1,4 +1,4 @@
-package com.fpp.lesson4;
+package com.fpp;
 
 import java.util.Scanner;
 

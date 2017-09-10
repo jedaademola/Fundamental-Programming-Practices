@@ -1,4 +1,4 @@
-package com.fpp.lesson4;
+package com.fpp;
 
 import java.util.Scanner;
 
@@ -20,6 +20,10 @@ public class RecursiveBinarySearch {
         System.out.println(searchResult);
 	  
 	}
+	 public static int binarySearchTwo( int integerToSearch, int[] integerArray )
+	 {
+		 return 1;
+	 }
 	
 	 public static int binarySearch( int integerToSearch, int[] integerArray, int lowerPoint, int highPoint )
 	   {
