@@ -10,10 +10,10 @@ public final class Triangle {
 	private double height;
 	
 	
-	public Triangle(double _base, double _height)
+	public Triangle(double base, double height)
 	{
-		this.base= _base;
-		this.height=_height;
+		this.base= base;
+		this.height=height;
 	}
 		
 	public double getBase() {

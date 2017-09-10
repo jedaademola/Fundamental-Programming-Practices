@@ -7,10 +7,10 @@ public final class Rectangle {
 	
 	//width * length
 	
-	public Rectangle(double _width, double _length)
+	public Rectangle(double width, double length)
 	{
-		this.width= _width;
-		this.length=_length;
+		this.width= width;
+		this.length=length;
 	}
 	
 	

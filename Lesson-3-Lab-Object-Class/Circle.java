@@ -8,9 +8,9 @@ public final class Circle {
 	
 
 	
-	public Circle(double _radius)
+	public Circle(double radius)
 	{
-		this.radius= _radius;
+		this.radius= radius;
 		
 	}
 	public double getRadius() {
