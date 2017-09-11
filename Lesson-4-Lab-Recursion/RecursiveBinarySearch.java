@@ -12,20 +12,20 @@ public class RecursiveBinarySearch {
 		
 	    int[] integerArray = {4,5,6,8,9,11,12,17,18,20,21,23,25,27,30,31,33};
 	    
-	    String searchResult = ( binarySearch(integerToSearch,integerArray,0,integerArray.length - 1) > -1)
+	    String searchResult = ( binarySearch(integerToSearch,integerArray) > -1)
 	    		? "Integer:" + integerToSearch + " Found at position:" 
-                        + binarySearch(integerToSearch,integerArray,0,integerArray.length - 1)
+                        + binarySearch(integerToSearch,integerArray)
                         : "Integer:" + integerToSearch + " not Found in the array!";
                         
         System.out.println(searchResult);
 	  
 	}
-	 public static int binarySearchTwo( int integerToSearch, int[] integerArray )
+	 public static int binarySearch( int integerToSearch, int[] integerArray )
 	 {
-		 return 1;
+		 return  binarySearchOperation(integerToSearch,integerArray,0,integerArray.length - 1);
 	 }
 	
-	 public static int binarySearch( int integerToSearch, int[] integerArray, int lowerPoint, int highPoint )
+	 public static int binarySearchOperation( int integerToSearch, int[] integerArray, int lowerPoint, int highPoint )
 	   {
 	       int midPoint;
 	       int  retVal;
@@ -45,11 +45,11 @@ public class RecursiveBinarySearch {
 	          }
 	          else if ( integerToSearch < integerArray[midPoint] )
 	          {
-	        	  retVal = binarySearch( integerToSearch, integerArray, lowerPoint, midPoint - 1 ); 
+	        	  retVal = binarySearchOperation( integerToSearch, integerArray, lowerPoint, midPoint - 1 ); 
 	          }
 		      else 
 	          {
-		    	  retVal = binarySearch( integerToSearch, integerArray, midPoint + 1, highPoint );      
+		    	  retVal = binarySearchOperation( integerToSearch, integerArray, midPoint + 1, highPoint );      
 	          }
 
 	          return ( retVal );
