@@ -11,7 +11,7 @@ public class MinimumCharacter {
 	public static char getMinimumCharacter(String input)
 	{
 		if(input == null || input.equals(""))
-			return 0;
+			return '\u0000';
 		else
 		{
 		char min ;
