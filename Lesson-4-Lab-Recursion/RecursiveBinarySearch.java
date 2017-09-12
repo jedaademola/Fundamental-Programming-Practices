@@ -57,3 +57,14 @@ public class RecursiveBinarySearch {
 	   }
 
 }
+/*
+Enter Integer to search:
+18
+Integer:18 Found at position:8
+
+Enter Integer to search:
+80
+Integer:80 not Found in the array!
+
+
+*/
