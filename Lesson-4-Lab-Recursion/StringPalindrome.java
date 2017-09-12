@@ -32,3 +32,14 @@ public class StringPalindrome {
 	}
 
 }
+/*
+Enter String to check:
+ada
+ada:is palindrome
+
+Enter String to check:
+lukman
+lukman is not palindrome
+
+
+ */

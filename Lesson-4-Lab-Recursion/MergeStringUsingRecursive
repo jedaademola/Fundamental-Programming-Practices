@@ -1,0 +1,40 @@
+package com.fpp;
+
+public class MergeStringUsingRecursive {
+	
+
+	public static void main(String[] args) 
+	{
+		System.out.println(recursiveMergeString("adl","aemo"));
+	}
+	
+	public static String recursiveMergeString(String firstString, String secondString) 
+	{
+		
+		if(secondString.isEmpty() && !firstString.isEmpty() )
+		{
+			return firstString; 
+		}
+		else if(!secondString.isEmpty() && firstString.isEmpty() )
+		{
+			return secondString;
+		}
+		else if(firstString.charAt(0) > secondString.charAt(0) ) 
+		{
+			return secondString.charAt(0) + recursiveMergeString(firstString,secondString.substring(1));
+		}
+		else
+		{
+			return firstString.charAt(0) + recursiveMergeString(firstString.substring(1),secondString);
+		}
+	}
+	
+
+}
+/*
+ * OUTPUT
+ * -----------------
+ aadelmo
+ 
+ 
+ */

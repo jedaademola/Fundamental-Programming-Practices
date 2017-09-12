@@ -39,3 +39,6 @@ public class MinimumCharacter {
 	}
 
 }
+/*
+ Minimum Character: a
+ */
