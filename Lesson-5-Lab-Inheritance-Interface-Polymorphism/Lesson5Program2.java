@@ -54,7 +54,7 @@ public class Lesson5Program2 {
 /*
  OUTPUT
  --------------
- Do you wish to view sum of department salaries(Y/N):
+Do you wish to view sum of department salaries(Y/N):
 Y
 
 Sum of all salaries:80060.00
