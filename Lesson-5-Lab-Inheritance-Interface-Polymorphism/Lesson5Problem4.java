@@ -43,11 +43,11 @@ public class Lesson5Problem4 {
 /*
  OUTPUT
  ---------------------------
-Employee [firstName=Lukman, lastName=Arogundade, socialSecurityNumer=12345]CommissionEmployee [grossSales=20000.0, commisionRate=0.25]
+Employee [firstName=Lukman, lastName=Arogundade, socialSecurityNumer=12345]   CommissionEmployee [grossSales=20000.0, commisionRate=0.25]
 Employee [firstName=Hawwa, lastName=Arogundade, socialSecurityNumer=12346]  HourlyEmployee [wage=200.0, hours=20.0]
 Employee [firstName=Jeda, lastName=Arogundade, socialSecurityNumer=12347]  SalariedEmployee [weeklySalary=3500.0]
-Employee [firstName=Ademola, lastName=Arogundade, socialSecurityNumer=12348]CommissionEmployee [grossSales=20000.0, commisionRate=0.25]  BasePlusCommisionEmployee [baseSalary=200.0]
-Employee [firstName=Farhan, lastName=Arogundade, socialSecurityNumer=12349]CommissionEmployee [grossSales=3500.0, commisionRate=0.25]
+Employee [firstName=Ademola, lastName=Arogundade, socialSecurityNumer=12348]   CommissionEmployee [grossSales=20000.0, commisionRate=0.25]  BasePlusCommisionEmployee [baseSalary=200.0]
+Employee [firstName=Farhan, lastName=Arogundade, socialSecurityNumer=12349]   CommissionEmployee [grossSales=3500.0, commisionRate=0.25]
 
 Total salaries of all the employees: 18575.00
  */
