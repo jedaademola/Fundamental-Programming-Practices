@@ -1,6 +1,6 @@
 package com.fpp.lesson5;
 
-public class Lesson5Problem6B {
+public class Lesson5Problem6DeepCopy {
 
 
 	public static void main(String[] args) throws CloneNotSupportedException 
