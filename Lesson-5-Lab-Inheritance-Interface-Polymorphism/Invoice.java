@@ -8,8 +8,8 @@ public class Invoice implements Payable{
 	
 	@Override
 	public String toString() {
-		String superData = super.toString();
-		return superData + "  Invoice [partNumber=" + partNumber + ", partDescription=" + partDescription + ", quantity=" + quantity
+		
+		return "Invoice [partNumber=" + partNumber + ", partDescription=" + partDescription + ", quantity=" + quantity
 				+ ", pricePerItem=" + pricePerItem + "]";
 	}
 	private double pricePerItem;

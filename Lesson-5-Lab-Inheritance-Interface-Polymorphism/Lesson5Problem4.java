@@ -4,7 +4,7 @@ public class Lesson5Problem4 {
 
 	public static void main(String[] args) {
 		
-		Payable[] payables = new Payable[5];
+		Payable[] payables = new Payable[6];
 		
 		CommissionEmployee emp1 = new CommissionEmployee("Lukman","Arogundade","12345",20000.0,0.25);
 		HourlyEmployee emp2 = new HourlyEmployee("Hawwa","Arogundade","12346",200.0,20);
@@ -20,24 +20,29 @@ public class Lesson5Problem4 {
 		payables[2] = emp3;
 		payables[3] = emp4;
 		payables[4] = emp5;
+		payables[5] =invoice;
 		
 		printEmployeeSalaries(payables);
 
 	}
 	
+
 	public static void printEmployeeSalaries(Payable[] payables)
 	{
 		double totalSalaries=0.0;
 		for(Payable p: payables)
 		{
-			totalSalaries += p.getPaymentAmount();
-			System.out.println(p.toString());
+			if(p instanceof Employee)
+			{
+				totalSalaries += p.getPaymentAmount();
+				System.out.println(p.toString());
+			}
 		}
 		System.out.println();
 		System.out.printf("Total salaries of all the employees: %.2f" , totalSalaries);
-		
-		
+				
 	}
+
 
 }
 /*

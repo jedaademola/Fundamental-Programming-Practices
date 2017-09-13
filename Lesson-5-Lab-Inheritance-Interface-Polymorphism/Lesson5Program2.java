@@ -40,14 +40,24 @@ public class Lesson5Program2 {
 	public static void printSalaries(DeptEmployee[] department)
 	{
 		double totalSalary=0.0;
+		double profTotalSalary =0.0;
+		double secretaryTotalSalary =0.0;
 		for(DeptEmployee d: department)
 		{
+			if (d instanceof Professor)
+				profTotalSalary+=d.computeSalary();
+			
+			if (d instanceof Secretary)
+				secretaryTotalSalary+=d.computeSalary();
+				
 			totalSalary+= d.computeSalary();
 		}
 		
+		System.out.printf("Sum of all Professor salaries:%.2f",profTotalSalary);
+		System.out.println();
+		System.out.printf("Sum of all Secretary salaries:%.2f",secretaryTotalSalary);
 		System.out.println();
 		System.out.printf("Sum of all salaries:%.2f",totalSalary);
-		System.out.println();
 	}
 
 }
@@ -56,7 +66,8 @@ public class Lesson5Program2 {
  --------------
 Do you wish to view sum of department salaries(Y/N):
 Y
-
+Sum of all Professor salaries:60000.00
+Sum of all Secretary salaries:20060.00
 Sum of all salaries:80060.00
 
 
@@ -65,5 +76,6 @@ Sum of all salaries:80060.00
 Do you wish to view sum of department salaries(Y/N):
 N
 Invalid input, progrom terminated!
+
 
  */
