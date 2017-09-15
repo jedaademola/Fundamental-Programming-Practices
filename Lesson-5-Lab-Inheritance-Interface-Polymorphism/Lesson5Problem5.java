@@ -9,9 +9,9 @@ public class Lesson5Problem5 {
 		
 		System.out.println("computer1.equals(computer2) : " + computer1.equals(computer2));
 		System.out.println("**********************************");
-		System.out.println("" + computer1.toString());
+		System.out.println("" + computer1);
 		System.out.println("**********************************");
-		System.out.println("" + computer2.toString());
+		System.out.println("" + computer2);
 		System.out.println("**********************************");
 		System.out.println("Computer1 Power:" + computer1.computePower());
 		System.out.println("Computer2 Power:" + computer2.computePower());

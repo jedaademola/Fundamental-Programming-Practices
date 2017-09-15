@@ -35,7 +35,7 @@ public class Lesson5Problem4 {
 			if(p instanceof Employee)
 			{
 				totalSalaries += p.getPaymentAmount();
-				System.out.println(p.toString());
+				System.out.println(p);
 			}
 		}
 		System.out.println();
