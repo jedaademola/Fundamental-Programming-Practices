@@ -23,7 +23,7 @@ public class Main {
 		
 		//Implementation steps
 		//Step 1: implement the combine method, to combine the two lists
-		List/*<specify type>*/ combined = combine(staff, teachers);
+		List <EmployeeData> combined = combine(staff, teachers);
 		
 		//Step 2: pass the combined list to computeSumOfSalaries
 		double salarySum = Statistics.computeSumOfSalaries(combined);
@@ -32,8 +32,12 @@ public class Main {
 	}
 	
 	//IMPLEMENT
-	public static List/*<specify type>*/ combine(List<Staff> staff, List<Teacher> teachers) {
-		return new ArrayList/*<specify type>*/();
+	public static List <EmployeeData> combine(List<Staff> staff, List<Teacher> teachers) {
+		List <EmployeeData> empList = new ArrayList<>();
+		empList.addAll(staff);
+		empList.addAll(teachers);
+		return empList;
+				//new ArrayList <EmployeeData>();
 	}
 
 }
