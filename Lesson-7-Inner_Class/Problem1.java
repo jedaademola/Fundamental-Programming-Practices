@@ -1,7 +1,6 @@
-package com.fpp.lesson8;
+package com.fpp.lesson7;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
