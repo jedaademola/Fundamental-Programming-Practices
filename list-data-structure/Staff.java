@@ -15,7 +15,7 @@ public final class Staff implements EmployeeData{
 		return name;
 	}
 	
-	//@Override
+	@Override
 	public double getSalary() {
 		return salary;
 	}
