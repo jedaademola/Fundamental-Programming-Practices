@@ -12,7 +12,7 @@ public final class Teacher  implements EmployeeData{
 		this.bonus = bonus;
 	}
 	
-	//@Override
+	@Override
 	public double getSalary() {
 		return salary + bonus;
 	}
