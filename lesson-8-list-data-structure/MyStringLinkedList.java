@@ -1,6 +1,7 @@
 package com.fpp.lesson8;
 
 public class MyStringLinkedList {
+	double a,b,c,d,k,e;
 	Node header;
 
 	MyStringLinkedList() {
@@ -75,6 +76,8 @@ public class MyStringLinkedList {
 		
 	}
 	public void printMax(){
+		
+		
 		
 		if (header == null)
 			System.out.println("List has no element,cannot find Minimun");
@@ -267,7 +270,7 @@ public class MyStringLinkedList {
 		if (header == null)
 			System.out.println("No element in the list");
 		else
-			System.out.print(print(n.next));
+			print(n.next);
 	}
 	//Write a recursive print method to display
 	//the elements in the list. Start with the First Node(Head)
@@ -299,7 +302,7 @@ public class MyStringLinkedList {
 	}
 
 	public static void main(String[] args) {
-		MyStringLinkedList mySL = new MyStringLinkedList();
+/*		MyStringLinkedList mySL = new MyStringLinkedList();
 		System.out.println(mySL);
 		mySL.printReverse();
 		mySL.addFront("Carrot Cake");
@@ -343,7 +346,7 @@ public class MyStringLinkedList {
 		mySL.printReverse();
 		mySL.deleteList();
 		System.out.println(mySL);
-		mySL.printReverse();
+		mySL.printReverse();*/
 	}
 
 }
