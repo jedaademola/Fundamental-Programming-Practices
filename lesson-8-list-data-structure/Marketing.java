@@ -47,9 +47,9 @@ public class Marketing {
 		Collections.sort(markets, sales);
 		System.out.println("After sorting:" + markets);
 		
-		SaleAmountComparator sales1 = new SaleAmountComparator();
+		EmployeeNameComparator employeeName = new EmployeeNameComparator();
 		List<Marketing> newLsit = listMoreThan1000(markets);
-		Collections.sort(newLsit, sales1);
+		Collections.sort(newLsit, employeeName);
 		System.out.println("After sorting by  $1000 or more:" + newLsit);
 		System.out.println(newLsit.size());
 	}
@@ -72,6 +72,14 @@ public class Marketing {
 		@Override
 		public int compare(Marketing o1, Marketing o2) {
 			return Double.compare(o1.salesAmount, o2.salesAmount);
+		}
+
+	}
+	static class EmployeeNameComparator implements Comparator<Marketing>{
+
+		@Override
+		public int compare(Marketing o1, Marketing o2) {
+			return o1.employeeName.compareTo(o2.employeeName);
 		}
 
 	}
