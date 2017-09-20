@@ -30,7 +30,7 @@ public class ArrayQueueImpl {
 			System.out.println("Queue is Empty");
 			return;
 		}
-		for(int k=front;k< size;++k)
+		for(int k=front;k<rear;++k)
 		{
 			System.out.print(arr[k]);
 		}
