@@ -14,7 +14,7 @@ public class ArrayQueueMain {
 		System.out.println();
 		System.out.println("Queue size:" + queue.size());
 		
-		System.out.println("Dequeue element:" + queue.dequeue());
+		System.out.println("Dequeue element1:" + queue.dequeue());
 		queue.pint();
 		
 		System.out.println();
@@ -22,6 +22,12 @@ public class ArrayQueueMain {
 		
 		System.out.println("Peek element:" + queue.peek());
 		queue.pint();
+		
+		System.out.println();
+		System.out.println("Dequeue element2:" + queue.dequeue());
+		queue.pint();
+		System.out.println();
+		System.out.println("Queue size:" + queue.size());
 	
 	
 	
