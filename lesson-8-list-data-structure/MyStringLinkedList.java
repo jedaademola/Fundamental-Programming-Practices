@@ -1,8 +1,10 @@
 package com.fpp.lesson8;
 
+
+
 public class MyStringLinkedList {
 	double a,b,c,d,k,e;
-	Node header;
+	static Node header;
 
 	MyStringLinkedList() {
 		header = null;
@@ -33,7 +35,6 @@ public class MyStringLinkedList {
      {
     	 Node temp = header;
     	 temp.next.previous = null;
-    	 temp = null;
     	 header = temp.next;
      }
 		
@@ -47,7 +48,7 @@ public class MyStringLinkedList {
 			while (lastNode.next != null)
 				lastNode = lastNode.next;
 			
-			lastNode = null;
+			lastNode.previous = null;
 		}
 		
 	}
@@ -56,7 +57,7 @@ public class MyStringLinkedList {
 		if (header == null)
 			System.out.println("List has no element,cannot find Minimun");
 		else if (header.next == null)
-			System.out.println("Minimun value:" + header.value);
+			System.out.println("Minimum value:" + header.value);
 		else
 		{
 			Node list = header;
@@ -64,40 +65,43 @@ public class MyStringLinkedList {
 			
 			while (list.next != null)
 			{
-				if(minValue.compareTo(list.value) == 1 )
+				if(minValue.compareTo(list.value) >= 0 )
 				{
 					minValue = list.value;
 				}
 				list = list.next;
 			}
 			
-			System.out.println("Minimun value:" + minValue);
+			System.out.println("Minimum value:" + minValue);
 		}
 		
 	}
 	public void printMax(){
 		
-		
-		
 		if (header == null)
 			System.out.println("List has no element,cannot find Minimun");
 		else if (header.next == null)
-			System.out.println("Maximun value:" + header.value);
+			System.out.println("Maximum value:" + header.value);
 		else
 		{
 			Node list = header;
-			String maxValue=list.value;
+			String maxValue="";
 			
 			while (list.next != null)
 			{
-				if(maxValue.compareTo(list.value) == -1 )
+				//String tempValue = list.value;
+				//int test = maxValue.compareTo(tempValue);
+			
+				if(maxValue.compareTo(list.value) <= 0 )
 				{
 					maxValue = list.value;
 				}
+				
 				list = list.next;
+				
 			}
 			
-			System.out.println("Maximun value:" + maxValue);
+			System.out.println("Maximum value:" + maxValue);
 		}
 		
 	}
@@ -144,14 +148,14 @@ public class MyStringLinkedList {
 
 	// implement the code
 
-	public int Size() {
+	public int size() {
 		
 		int count = 0;
 		if (header == null)
 			return 0;
 		else {
 			Node temp = header;
-			while (header.next != null)
+			while (temp != null)
 			{
 				++count;
 				temp = temp.next;
@@ -302,51 +306,67 @@ public class MyStringLinkedList {
 	}
 
 	public static void main(String[] args) {
-/*		MyStringLinkedList mySL = new MyStringLinkedList();
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.addFront("Carrot Cake");
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.addFront("Blueberry Muffin");
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.addFront("Apple Pie");
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.addLast("Orange Juice");
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.addLast("Peach Sauce");
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.deleteNode(mySL.findItem("Apple Pie"));
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.deleteNode(mySL.findItem("Peach Sauce"));
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.deleteNode(mySL.findItem("Carrot Cake"));
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.postAddNode(mySL.findItem("Blueberry Muffin"), "Carrot Cake");
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.preAddNode(mySL.findItem("Blueberry Muffin"), "Apple Pie");
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.postAddNode(mySL.findItem("Carrot Cake"), "Danish Delight");
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.preAddNode(mySL.findItem("Orange Juice"), "Mango Smoothie");
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.postAddNode(mySL.findItem("Orange Juice"), "Peach Sauce");
-		System.out.println(mySL);
-		mySL.printReverse();
-		mySL.deleteList();
-		System.out.println(mySL);
-		mySL.printReverse();*/
+		
+		MyStringLinkedList mySlked = new MyStringLinkedList();	
+		System.out.println(mySlked);
+		
+		mySlked.addFront("Lukman");
+		System.out.println(mySlked);
+		
+		mySlked.addLast("Farah");
+		System.out.println(mySlked);
+		
+		Node postNode = header.next;
+		mySlked.postAddNode(postNode,"Farhan");
+		System.out.println(mySlked);
+		
+		Node postNode1 = header.next;
+		mySlked.postAddNode(postNode1,"Anke");
+		System.out.println(mySlked);
+		
+		Node postNode2 = header;
+		mySlked.postAddNode(postNode2,"Mozeed");
+		System.out.println(mySlked);
+		
+		System.out.println("Size of Linked List:" + mySlked.size());
+		System.out.println("Linked List is empty:" + mySlked.isEmpty());
+		System.out.println("Linked List first item:" + mySlked.getFirst());
+		System.out.println("Linked List Last item:" + mySlked.getLast());
+		
+		mySlked.removeFirst();
+		System.out.println(mySlked);
+		mySlked.removeLast();
+		System.out.println(mySlked);
+		
+		mySlked.printMax();
+		System.out.println(mySlked);
+		mySlked.printMin();
+		System.out.println(mySlked);
+		
+		
+		
 	}
 
 }
+
+/*
+OUTPUT
+----------------------- 
+  -->[NULL]
+-->[Lukman]-->[NULL]
+-->[Lukman]-->[Farah]-->[NULL]
+-->[Lukman]-->[Farah]-->[Farhan]-->[NULL]
+-->[Lukman]-->[Farah]-->[Anke]-->[Farhan]-->[NULL]
+-->[Lukman]-->[Mozeed]-->[Farah]-->[Anke]-->[Farhan]-->[NULL]
+Size of Linked List:5
+Linked List is empty:false
+Linked List first item:Lukman
+Linked List Last item:Farhan
+-->[Mozeed]-->[Farah]-->[Anke]-->[Farhan]-->[NULL]
+-->[Mozeed]-->[Farah]-->[Anke]-->[Farhan]-->[NULL]
+Maximum value:Mozeed
+-->[Mozeed]-->[Farah]-->[Anke]-->[Farhan]-->[NULL]
+Minimum value:Anke
+-->[Mozeed]-->[Farah]-->[Anke]-->[Farhan]-->[NULL]
+
+*/
