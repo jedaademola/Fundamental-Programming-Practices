@@ -83,4 +83,51 @@ public class Marketing {
 		}
 
 	}
+	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Marketing other = (Marketing) obj;
+		if (salesAmount != other.salesAmount)
+			return false;
+		return true;
+	}
 }
+/*
+ OUTPUT
+ ------------
+ 5
+[EmployeeName=Lukman, ProductName=Earlier Savings Account, SalesAmount=200.0
+, EmployeeName=Stanley, ProductName=Premium Savings Account, SalesAmount=5000.0
+, EmployeeName=Samson, ProductName=Current Account, SalesAmount=2000.0
+, EmployeeName=Abdallah, ProductName=Checking Account, SalesAmount=9000.0
+, EmployeeName=Geeta, ProductName=Premium Current Account, SalesAmount=7000.0
+]
+[EmployeeName=Lukman, ProductName=Earlier Savings Account, SalesAmount=200.0
+, EmployeeName=Stanley, ProductName=Premium Savings Account, SalesAmount=5000.0
+, EmployeeName=Samson, ProductName=Current Account, SalesAmount=2000.0
+, EmployeeName=Geeta, ProductName=Premium Current Account, SalesAmount=7000.0
+]
+[EmployeeName=Lukman, ProductName=Earlier Savings Account, SalesAmount=200.0
+, EmployeeName=Stanley, ProductName=Premium Savings Account, SalesAmount=5000.0
+, EmployeeName=Farah, ProductName=Earlier Savings Account, SalesAmount=15.0
+, EmployeeName=Geeta, ProductName=Premium Current Account, SalesAmount=7000.0
+]
+4
+After sorting:[EmployeeName=Farah, ProductName=Earlier Savings Account, SalesAmount=15.0
+, EmployeeName=Lukman, ProductName=Earlier Savings Account, SalesAmount=200.0
+, EmployeeName=Stanley, ProductName=Premium Savings Account, SalesAmount=5000.0
+, EmployeeName=Geeta, ProductName=Premium Current Account, SalesAmount=7000.0
+]
+After sorting by  $1000 or more:[EmployeeName=Geeta, ProductName=Premium Current Account, SalesAmount=7000.0
+, EmployeeName=Stanley, ProductName=Premium Savings Account, SalesAmount=5000.0
+]
+2
+
+ */
