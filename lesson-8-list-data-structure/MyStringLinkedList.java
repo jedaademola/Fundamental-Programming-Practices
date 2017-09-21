@@ -1,8 +1,9 @@
 package com.fpp.lesson8;
 
+
+
 public class MyStringLinkedList {
-	double a,b,c,d,k,e;
-	Node header;
+	static Node header;
 
 	MyStringLinkedList() {
 		header = null;
@@ -24,7 +25,7 @@ public class MyStringLinkedList {
 			return temp;
 		}
 	}
-	public void removeFirst(){//TODO NOT COMPLETED
+	public void removeFirst(){
      if (header == null)
     	 return;
      if(header.next == null)
@@ -33,11 +34,13 @@ public class MyStringLinkedList {
      {
     	 Node temp = header;
     	 temp.next.previous = null;
-    	 temp = null;
     	 header = temp.next;
      }
 		
 	}
+	
+	
+	
 	public void removeLast(){
 		if (header == null)
 			return;
@@ -45,9 +48,13 @@ public class MyStringLinkedList {
 			
 			Node lastNode = header;
 			while (lastNode.next != null)
+			{
 				lastNode = lastNode.next;
+			}
 			
-			lastNode = null;
+			lastNode.previous.next = null;
+			lastNode.previous = null;
+
 		}
 		
 	}
@@ -56,7 +63,7 @@ public class MyStringLinkedList {
 		if (header == null)
 			System.out.println("List has no element,cannot find Minimun");
 		else if (header.next == null)
-			System.out.println("Minimun value:" + header.value);
+			System.out.println("Minimum value:" + header.value);
 		else
 		{
 			Node list = header;
@@ -64,40 +71,45 @@ public class MyStringLinkedList {
 			
 			while (list.next != null)
 			{
-				if(minValue.compareTo(list.value) == 1 )
+				list = list.next;
+				
+				if(minValue.compareTo(list.value) >= 0 )
 				{
 					minValue = list.value;
 				}
-				list = list.next;
+				
 			}
 			
-			System.out.println("Minimun value:" + minValue);
+			System.out.println("Minimum value:" + minValue);
 		}
 		
 	}
 	public void printMax(){
 		
-		
-		
 		if (header == null)
 			System.out.println("List has no element,cannot find Minimun");
 		else if (header.next == null)
-			System.out.println("Maximun value:" + header.value);
+			System.out.println("Maximum value:" + header.value);
 		else
 		{
 			Node list = header;
-			String maxValue=list.value;
+			String maxValue="";
 			
 			while (list.next != null)
 			{
-				if(maxValue.compareTo(list.value) == -1 )
+				//String tempValue = list.value;
+				//int test = maxValue.compareTo(tempValue);
+			
+				if(maxValue.compareTo(list.value) <= 0 )
 				{
 					maxValue = list.value;
 				}
+				
 				list = list.next;
+				
 			}
 			
-			System.out.println("Maximun value:" + maxValue);
+			System.out.println("Maximum value:" + maxValue);
 		}
 		
 	}
@@ -123,7 +135,8 @@ public class MyStringLinkedList {
 			while (temp.next != null)
 				temp = temp.next;
 
-			Node lastNode = new Node(temp.previous, item, null);
+			Node lastNode = new Node(null, item, null);
+			lastNode.previous = temp;
 			temp.next = lastNode;
 
 		}
@@ -144,14 +157,14 @@ public class MyStringLinkedList {
 
 	// implement the code
 
-	public int Size() {
+	public int size() {
 		
 		int count = 0;
 		if (header == null)
 			return 0;
 		else {
 			Node temp = header;
-			while (header.next != null)
+			while (temp != null)
 			{
 				++count;
 				temp = temp.next;
@@ -265,15 +278,25 @@ public class MyStringLinkedList {
 		return str;
 	}
 
-	
-	public void print(Node n) {
-		if (header == null)
-			System.out.println("No element in the list");
+	public void printList()
+	{
+		Node n = header;
+		if (n == null)
+		   System.out.println("No element in the list");
 		else
+		   print(n);
+	}
+	private void print(Node n) {
+		
+		if ( n != null)
+		{
+			System.out.println(n.value);
 			print(n.next);
+		}
 	}
 	//Write a recursive print method to display
 	//the elements in the list. Start with the First Node(Head)
+	
 	public void printReverse() {
 		String str = "";
 		Node temp = findLast();
@@ -302,7 +325,8 @@ public class MyStringLinkedList {
 	}
 
 	public static void main(String[] args) {
-/*		MyStringLinkedList mySL = new MyStringLinkedList();
+		
+		MyStringLinkedList mySL = new MyStringLinkedList();
 		System.out.println(mySL);
 		mySL.printReverse();
 		mySL.addFront("Carrot Cake");
@@ -343,10 +367,59 @@ public class MyStringLinkedList {
 		mySL.printReverse();
 		mySL.postAddNode(mySL.findItem("Orange Juice"), "Peach Sauce");
 		System.out.println(mySL);
-		mySL.printReverse();
+		mySL.removeFirst();
+		System.out.println(mySL);		
+		mySL.removeLast();
+		System.out.println(mySL);
+		mySL.printList();
+		
 		mySL.deleteList();
 		System.out.println(mySL);
-		mySL.printReverse();*/
+		mySL.printReverse();
+		
 	}
 
 }
+
+/*
+OUTPUT
+----------------------- 
+-->[NULL]
+==>[NULL]
+-->[Carrot Cake]-->[NULL]
+==>[Carrot Cake]==>[NULL]
+-->[Blueberry Muffin]-->[Carrot Cake]-->[NULL]
+==>[Carrot Cake]==>[Blueberry Muffin]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[NULL]
+==>[Carrot Cake]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[Peach Sauce]-->[NULL]
+==>[Peach Sauce]==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+I am here 2
+-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[Peach Sauce]-->[NULL]
+==>[Peach Sauce]==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[NULL]
+I am here 3
+-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[NULL]
+I am here 4
+-->[Blueberry Muffin]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Blueberry Muffin]==>[NULL]
+-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Blueberry Muffin]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Danish Delight]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Mango Smoothie]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Mango Smoothie]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Mango Smoothie]-->[Orange Juice]-->[Peach Sauce]-->[NULL]
+-->[Blueberry Muffin]-->[Mango Smoothie]-->[Orange Juice]-->[Peach Sauce]-->[NULL]
+-->[Blueberry Muffin]-->[Mango Smoothie]-->[Orange Juice]-->[NULL]
+Blueberry Muffin
+Mango Smoothie
+Orange Juice
+-->[NULL]
+==>[NULL]
+
+*/
