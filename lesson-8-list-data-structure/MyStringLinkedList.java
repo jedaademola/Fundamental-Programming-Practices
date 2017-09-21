@@ -1,4 +1,4 @@
-package com.fpp.lesson8and9;
+package com.fpp.lesson8;
 
 
 
@@ -135,7 +135,8 @@ public class MyStringLinkedList {
 			while (temp.next != null)
 				temp = temp.next;
 
-			Node lastNode = new Node(temp.previous, item, null);
+			Node lastNode = new Node(null, item, null);
+			lastNode.previous = temp;
 			temp.next = lastNode;
 
 		}
@@ -325,49 +326,56 @@ public class MyStringLinkedList {
 
 	public static void main(String[] args) {
 		
-		MyStringLinkedList mySlked = new MyStringLinkedList();	
-		System.out.println(mySlked);
+		MyStringLinkedList mySL = new MyStringLinkedList();
+		System.out.println(mySL);
+		mySL.printReverse();
+		mySL.addFront("Carrot Cake");
+		System.out.println(mySL);
+		mySL.printReverse();
+		mySL.addFront("Blueberry Muffin");
+		System.out.println(mySL);
+		mySL.printReverse();
+		mySL.addFront("Apple Pie");
+		System.out.println(mySL);
+		mySL.printReverse();
+		mySL.addLast("Orange Juice");
+		System.out.println(mySL);
+		mySL.printReverse();
+		mySL.addLast("Peach Sauce");
+		System.out.println(mySL);
+		mySL.printReverse();
+		mySL.deleteNode(mySL.findItem("Apple Pie"));
+		System.out.println(mySL);
+		mySL.printReverse();
+		mySL.deleteNode(mySL.findItem("Peach Sauce"));
+		System.out.println(mySL);
+		mySL.printReverse();
+		mySL.deleteNode(mySL.findItem("Carrot Cake"));
+		System.out.println(mySL);
+		mySL.printReverse();
+		mySL.postAddNode(mySL.findItem("Blueberry Muffin"), "Carrot Cake");
+		System.out.println(mySL);
+		mySL.printReverse();
+		mySL.preAddNode(mySL.findItem("Blueberry Muffin"), "Apple Pie");
+		System.out.println(mySL);
+		mySL.printReverse();
+		mySL.postAddNode(mySL.findItem("Carrot Cake"), "Danish Delight");
+		System.out.println(mySL);
+		mySL.printReverse();
+		mySL.preAddNode(mySL.findItem("Orange Juice"), "Mango Smoothie");
+		System.out.println(mySL);
+		mySL.printReverse();
+		mySL.postAddNode(mySL.findItem("Orange Juice"), "Peach Sauce");
+		System.out.println(mySL);
+		mySL.removeFirst();
+		System.out.println(mySL);		
+		mySL.removeLast();
+		System.out.println(mySL);
+		mySL.printList();
 		
-		mySlked.addFront("Lukman");
-		System.out.println(mySlked);
-		
-		mySlked.addLast("Farah");
-		System.out.println(mySlked);
-		
-		Node postNode = header.next;
-		mySlked.postAddNode(postNode,"Farhan");
-		System.out.println(mySlked);
-		
-		Node postNode1 = header.next;
-		mySlked.postAddNode(postNode1,"Anke");
-		System.out.println(mySlked);
-		
-		Node postNode2 = header;
-		mySlked.postAddNode(postNode2,"Mozeed");
-		System.out.println(mySlked);
-		
-		System.out.println("Size of Linked List:" + mySlked.size());
-		System.out.println("Linked List is empty:" + mySlked.isEmpty());
-		System.out.println("Linked List first item:" + mySlked.getFirst());
-		System.out.println("Linked List Last item:" + mySlked.getLast());
-		
-		mySlked.removeFirst();
-		System.out.println(mySlked);
-		System.out.println("Size of Linked List after remove first:" + mySlked.size());
-		
-		mySlked.removeLast();
-		System.out.println(mySlked);
-		System.out.println("Size of Linked List after remove last:" + mySlked.size());
-
-		mySlked.printMax();
-		System.out.println(mySlked);
-		mySlked.printMin();
-		System.out.println(mySlked);
-		
-		mySlked.printList();
-		System.out.println("Size of Linked List after recursive print:" + mySlked.size());
-		
-		
+		mySL.deleteList();
+		System.out.println(mySL);
+		mySL.printReverse();
 		
 	}
 
@@ -377,25 +385,41 @@ public class MyStringLinkedList {
 OUTPUT
 ----------------------- 
 -->[NULL]
--->[Lukman]-->[NULL]
--->[Lukman]-->[Farah]-->[NULL]
--->[Lukman]-->[Farah]-->[Farhan]-->[NULL]
--->[Lukman]-->[Farah]-->[Anke]-->[Farhan]-->[NULL]
--->[Lukman]-->[Mozeed]-->[Farah]-->[Anke]-->[Farhan]-->[NULL]
-Size of Linked List:5
-Linked List is empty:false
-Linked List first item:Lukman
-Linked List Last item:Farhan
--->[Mozeed]-->[Farah]-->[Anke]-->[Farhan]-->[NULL]
-Size of Linked List after remove first:4
--->[Mozeed]-->[Farah]-->[NULL]
-Size of Linked List after remove last:2
-Maximum value:Mozeed
--->[Mozeed]-->[Farah]-->[NULL]
-Minimum value:Farah
--->[Mozeed]-->[Farah]-->[NULL]
-Mozeed
-Farah
-Size of Linked List after recursive print:2
+==>[NULL]
+-->[Carrot Cake]-->[NULL]
+==>[Carrot Cake]==>[NULL]
+-->[Blueberry Muffin]-->[Carrot Cake]-->[NULL]
+==>[Carrot Cake]==>[Blueberry Muffin]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[NULL]
+==>[Carrot Cake]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[Peach Sauce]-->[NULL]
+==>[Peach Sauce]==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+I am here 2
+-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[Peach Sauce]-->[NULL]
+==>[Peach Sauce]==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[NULL]
+I am here 3
+-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Carrot Cake]==>[Blueberry Muffin]==>[NULL]
+I am here 4
+-->[Blueberry Muffin]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Blueberry Muffin]==>[NULL]
+-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Blueberry Muffin]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Carrot Cake]-->[Danish Delight]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Mango Smoothie]-->[Orange Juice]-->[NULL]
+==>[Orange Juice]==>[Mango Smoothie]==>[Blueberry Muffin]==>[Apple Pie]==>[NULL]
+-->[Apple Pie]-->[Blueberry Muffin]-->[Mango Smoothie]-->[Orange Juice]-->[Peach Sauce]-->[NULL]
+-->[Blueberry Muffin]-->[Mango Smoothie]-->[Orange Juice]-->[Peach Sauce]-->[NULL]
+-->[Blueberry Muffin]-->[Mango Smoothie]-->[Orange Juice]-->[NULL]
+Blueberry Muffin
+Mango Smoothie
+Orange Juice
+-->[NULL]
+==>[NULL]
 
 */
