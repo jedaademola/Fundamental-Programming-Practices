@@ -1,9 +1,8 @@
-package com.fpp.lesson8;
+package com.fpp.lesson8and9;
 
 
 
 public class MyStringLinkedList {
-	double a,b,c,d,k,e;
 	static Node header;
 
 	MyStringLinkedList() {
@@ -26,7 +25,7 @@ public class MyStringLinkedList {
 			return temp;
 		}
 	}
-	public void removeFirst(){//TODO NOT COMPLETED
+	public void removeFirst(){
      if (header == null)
     	 return;
      if(header.next == null)
@@ -39,6 +38,9 @@ public class MyStringLinkedList {
      }
 		
 	}
+	
+	
+	
 	public void removeLast(){
 		if (header == null)
 			return;
@@ -46,9 +48,13 @@ public class MyStringLinkedList {
 			
 			Node lastNode = header;
 			while (lastNode.next != null)
+			{
 				lastNode = lastNode.next;
+			}
 			
+			lastNode.previous.next = null;
 			lastNode.previous = null;
+
 		}
 		
 	}
@@ -65,11 +71,13 @@ public class MyStringLinkedList {
 			
 			while (list.next != null)
 			{
+				list = list.next;
+				
 				if(minValue.compareTo(list.value) >= 0 )
 				{
 					minValue = list.value;
 				}
-				list = list.next;
+				
 			}
 			
 			System.out.println("Minimum value:" + minValue);
@@ -269,15 +277,25 @@ public class MyStringLinkedList {
 		return str;
 	}
 
-	
-	public void print(Node n) {
-		if (header == null)
-			System.out.println("No element in the list");
+	public void printList()
+	{
+		Node n = header;
+		if (n == null)
+		   System.out.println("No element in the list");
 		else
+		   print(n);
+	}
+	private void print(Node n) {
+		
+		if ( n != null)
+		{
+			System.out.println(n.value);
 			print(n.next);
+		}
 	}
 	//Write a recursive print method to display
 	//the elements in the list. Start with the First Node(Head)
+	
 	public void printReverse() {
 		String str = "";
 		Node temp = findLast();
@@ -335,13 +353,19 @@ public class MyStringLinkedList {
 		
 		mySlked.removeFirst();
 		System.out.println(mySlked);
+		System.out.println("Size of Linked List after remove first:" + mySlked.size());
+		
 		mySlked.removeLast();
 		System.out.println(mySlked);
-		
+		System.out.println("Size of Linked List after remove last:" + mySlked.size());
+
 		mySlked.printMax();
 		System.out.println(mySlked);
 		mySlked.printMin();
 		System.out.println(mySlked);
+		
+		mySlked.printList();
+		System.out.println("Size of Linked List after recursive print:" + mySlked.size());
 		
 		
 		
@@ -352,7 +376,7 @@ public class MyStringLinkedList {
 /*
 OUTPUT
 ----------------------- 
-  -->[NULL]
+-->[NULL]
 -->[Lukman]-->[NULL]
 -->[Lukman]-->[Farah]-->[NULL]
 -->[Lukman]-->[Farah]-->[Farhan]-->[NULL]
@@ -363,10 +387,15 @@ Linked List is empty:false
 Linked List first item:Lukman
 Linked List Last item:Farhan
 -->[Mozeed]-->[Farah]-->[Anke]-->[Farhan]-->[NULL]
--->[Mozeed]-->[Farah]-->[Anke]-->[Farhan]-->[NULL]
+Size of Linked List after remove first:4
+-->[Mozeed]-->[Farah]-->[NULL]
+Size of Linked List after remove last:2
 Maximum value:Mozeed
--->[Mozeed]-->[Farah]-->[Anke]-->[Farhan]-->[NULL]
-Minimum value:Anke
--->[Mozeed]-->[Farah]-->[Anke]-->[Farhan]-->[NULL]
+-->[Mozeed]-->[Farah]-->[NULL]
+Minimum value:Farah
+-->[Mozeed]-->[Farah]-->[NULL]
+Mozeed
+Farah
+Size of Linked List after recursive print:2
 
 */
