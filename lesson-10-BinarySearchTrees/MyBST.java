@@ -1,10 +1,12 @@
 package com.fpp.lesson10;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-// Demo code for the user implemenation of Binary search tree
+// Demo code for the user implementation of Binary search tree
 public class MyBST {
 	/** The tree root. */
 	private BinaryNode root;
@@ -21,27 +23,63 @@ public class MyBST {
 	//
 
 	public void preOrder() {
+		
+		
 		preOrder(root);
 	}
 
 	private void preOrder(BinaryNode t) {
-
+		if (t != null) {
+			
+			System.out.print(t.element + ",");
+			printTree(t.left);
+			
+			printTree(t.right);
+		}
 	}
 
 	public void postOrder() {
-		preOrder(root);
+		postOrder(root);
 	}
 
 	private void postOrder(BinaryNode t) {
-
+		if (t != null) {
+						
+			printTree(t.left);
+			printTree(t.right);
+			System.out.print(t.element + ",");
+		}
 	}
 
 	public boolean contains(Integer key) {
+		
+		
+		
+	}
+	
+	private boolean contains(BinaryNode t , Integer key)
+	{
+		if(root == null){
+			
+			return false;
+		}
+		
+		if(root.element == key){
+			
+			return true;
+		}
+		
+		else{
+			return BinaryNode(t.element., key)
 		return false;
 	}
-
+}
 	public Integer getRoot() {
-		return -1;
+		if (root == null)
+		{
+			return -1;
+		}
+		return root.element;
 	}
 
 	public Integer leafNodes() {
@@ -54,11 +92,25 @@ public class MyBST {
 	}
 
 	public int size() {
-		return -1;
+		int count=0;
+		if (root == null)
+		{
+			System.out.println("Empty tree");
+			return -1;
+		}
+		else
+		{
+			BinaryNode n = root;
+			while(n.left  != null && n.right != null)
+				++count;
+			
+		}
+		
+		return count;
 	}
 
 	public boolean isEmpty() {
-		return false;
+		return root == null;
 	} // check the tree is empty or not
 
 	public Integer findMin() {
@@ -74,6 +126,11 @@ public class MyBST {
 	}
 
 	public Integer findMax(BinaryNode t) {
+		if (t == null)
+		{
+			System.out.println("Empty tree");
+			return -1;
+		}
 		return -1;
 	}
 
@@ -170,8 +227,9 @@ public class MyBST {
 		}
 		mybst.insert(12);
 		mybst.printTree();
+		System.out.println(mybst.getRoot());
 
-		TreeSet<Integer> ts = new TreeSet<Integer>();
+		/*TreeSet<Integer> ts = new TreeSet<Integer>();
 
 		for (int j = 0; j < a.length; j++) {
 			ts.add(a[j]);
@@ -192,6 +250,6 @@ public class MyBST {
 		map.remove(8);
 		String str = map.get(11) + ", " + map.get(10);
 		System.out.println(str);
-
+*/
 	}
 }
