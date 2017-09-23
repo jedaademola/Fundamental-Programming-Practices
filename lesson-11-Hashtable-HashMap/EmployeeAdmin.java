@@ -1,8 +1,13 @@
 package com.fpp.lesson11;
 
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+
+
 
 public class EmployeeAdmin {
 	
@@ -14,8 +19,43 @@ public class EmployeeAdmin {
 	*/
 	public static List<Employee> prepareReport(HashMap<String, Employee> table, List<String> socSecNums) {
 		//IMPLEMENT
-		return null;
+		List<Employee> newEmployee = new ArrayList <>();
+		for (String ssn : socSecNums)
+		{
+			
+			Employee tempEmp = table.get(ssn);
+			
+			if (tempEmp != null)
+			{
+				if (Integer.compare(tempEmp.getSalary(), 80000) == 1)
+				   newEmployee.add(tempEmp);
+			}
+			/*
+			if (table.containsKey(ssn))
+			{
+				Employee tempEmp = table.get(ssn);
+					
+					if (Integer.compare(tempEmp.getSalary(), 80000) == 1)
+						   newEmployee.add(tempEmp);
+			}
+			*/
+		}
+		
+		
+		Collections.sort(newEmployee,new CompareSocSecNums());
+		
+		return newEmployee;
 		
 	}
+	
+	 static class CompareSocSecNums implements Comparator<Employee>
+		{
+
+			@Override
+			public int compare(Employee o1, Employee o2) {
+				return o1.getSsn().compareTo(o2.getSsn());
+			}
+			
+		}	
 	
 }

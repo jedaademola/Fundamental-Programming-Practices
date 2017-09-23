@@ -2,6 +2,7 @@ package com.fpp.lesson11;
 
 
 import java.util.Arrays;
+
 import java.util.List;
 import java.util.HashMap;
 
@@ -33,11 +34,14 @@ public class Main {
 		};
 											
 		List<Employee> report = EmployeeAdmin.prepareReport(h, ssns);
+		
 		System.out.println(report);
 									
 		//Expected output:
 		//[(113145657: Rick, 92000), (212341557: Hank, 110000), (342892138: Ibu, 100000), (523421589: Tom, 88000)]
 
 	}
-
+	
+	
+	
 }
