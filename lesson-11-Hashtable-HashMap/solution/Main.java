@@ -15,7 +15,10 @@ public class Main {
 		CheckingAccount cAccount2 = new CheckingAccount(70000);
 		CheckingAccount cAccount3 = new CheckingAccount(30000);
 		CheckingAccount cAccount4 = new CheckingAccount(45000);
+		
 		List<Employee> emps = new ArrayList<>();
+		
+		
 		emps.add(new Employee("12", Arrays.asList(rAccount1, sAccount1)));
 		emps.add(new Employee("31", Arrays.asList(rAccount2, cAccount2)));
 		emps.add(new Employee("42", Arrays.asList(rAccount3, cAccount3, sAccount3)));

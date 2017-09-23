@@ -3,12 +3,13 @@ package com.fpp.lesson11.solution;
 import java.util.List;
 
 public class Employee {
-	public Employee(String id, List accounts) {
+	public Employee(String id, List<Account> accounts) {
 		this.id = id;
 		this.accounts = accounts;
 	}
 	String id;
-	List accounts;
+	//List accounts;
+	List<Account> accounts;
 	public String getId() {
 		return id;
 	}
