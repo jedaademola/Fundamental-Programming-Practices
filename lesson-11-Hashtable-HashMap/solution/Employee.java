@@ -16,10 +16,10 @@ public class Employee {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public List getAccounts() {
+	public List<Account> getAccounts() {
 		return accounts;
 	}
-	public void setAccounts(List accounts) {
+	public void setAccounts(List<Account> accounts) {
 		this.accounts = accounts;
 	}
 }
