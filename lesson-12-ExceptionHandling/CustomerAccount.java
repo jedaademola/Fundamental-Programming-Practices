@@ -53,7 +53,7 @@ public class CustomerAccount {
 		if( amount <= 0 )
 			 throw new UnsupportedOperationException("Amount must be greater than 0.0");
 		
-		 if (balance < 100)
+		 if (balance < 100 )
 			 throw new MinimumBalException("Balance cannot be less than $100");
 			 
 	}
@@ -66,7 +66,11 @@ public class CustomerAccount {
 		if (balance < amount) {
 			throw new AmountExceedException("Sorry, you cannot withdraw more than your balance:"+ balance);
 		} else {
-			balance -= amount;
+			
+			 if((balance - amount) < 100)
+				 throw new MinimumBalException("Withdrawal unsuccessful: Balance would be less than $100 after withdrawal");
+			 
+			  balance -= amount;
 		}
 		
 		System.out.println("Withdrawal Successful, new Balance:" + balance);
@@ -84,8 +88,8 @@ public class CustomerAccount {
 		CustomerAccount customer1 = new CustomerAccount("Lukman Arogundade","0011223345",5000);
 		try
 		{
-			customer1.deposit(500);
-			customer1.withdraw(5500);
+			customer1.deposit(0);
+			customer1.withdraw(1000);
 			System.out.println(customer1);
 		}
 		catch(Exception ex)
@@ -104,6 +108,12 @@ public class CustomerAccount {
 /*
 OUTPUT
 -----------------
+Deposit Amount:0.0
+Amount must be greater than 0.0
+End of Program
+
+
+
 Deposit Amount:500.0
 Deposit Successful, new Balance:5500.0
 Withdrawal Amount:0.0
@@ -129,6 +139,11 @@ Sorry, you cannot withdraw more than your balance:5500.0
 End of Program
 
 
+Deposit Amount:500.0
+Deposit Successful, new Balance:5500.0
+Withdrawal Amount:5500.0
+Withdrawal unsuccessful: Balance would be less than $100 after withdrawal
+End of Program
 
 
  */
