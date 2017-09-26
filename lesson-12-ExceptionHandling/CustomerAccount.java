@@ -27,31 +27,42 @@ public class CustomerAccount {
 	private String acNo;
 	private double balance;
 	
+
+	public CustomerAccount(String cusName, String acNo, double balance) {
+		this.cusName = cusName;
+		this.acNo = acNo;
+		this.balance = balance;
+	}
+	
 	@Override
 	public String toString() {
 		return "CustomerAccount [Customer Name=" + cusName + ", Account Name=" + acNo + ", Balance=" + balance + "]";
 	}
 
-	/*
-	 * Functions : deposit() – Used to increase the balance Withdraw() – Used to
-	 * reduce the balance. Create a user defined exception to handle the following
-	 * situation 1. Withdraw amount exceed the balance 2. Balance reach below 100$.
-	 */
-
+	
 	public void deposit(double amount) {
 		
 		System.out.println("Deposit Amount:" + amount);
-		checkBalanceAndAmount(amount);
+		checkdAmount(amount);
 		
 		balance += amount;
 		System.out.println("Deposit Successful, new Balance:" + balance);
 
 	}
 
-	public void checkBalanceAndAmount(double amount)
+	public void checkdAmount(double amount)
 	{
 		if( amount <= 0 )
 			 throw new UnsupportedOperationException("Amount must be greater than 0.0");
+		
+
+
+			 
+	}
+
+	public void checkBalance(double amount)
+	{
+		
 		
 		 if (balance < 100 )
 			 throw new MinimumBalException("Balance cannot be less than $100");
@@ -61,7 +72,8 @@ public class CustomerAccount {
 	public void withdraw(double amount)
 	{
 		System.out.println("Withdrawal Amount:" + amount);
-		checkBalanceAndAmount(amount);
+		checkdAmount(amount);
+		checkBalance(amount);
 				
 		if (balance < amount) {
 			throw new AmountExceedException("Sorry, you cannot withdraw more than your balance:"+ balance);
@@ -77,18 +89,13 @@ public class CustomerAccount {
 			 
 	}
 
-	public CustomerAccount(String cusName, String acNo, double balance) {
-		this.cusName = cusName;
-		this.acNo = acNo;
-		this.balance = balance;
-	}
 
 	public static void main(String[] args) {
 		
-		CustomerAccount customer1 = new CustomerAccount("Lukman Arogundade","0011223345",5000);
+		CustomerAccount customer1 = new CustomerAccount("Lukman Arogundade","0011223345",0.0);
 		try
 		{
-			customer1.deposit(0);
+			customer1.deposit(100);
 			customer1.withdraw(1000);
 			System.out.println(customer1);
 		}
